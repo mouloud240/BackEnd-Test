@@ -13,7 +13,7 @@ const corsOptions={
   optionsSuccessStatus: 200 // Ensure compatibility by setting OPTIONS success status to 200 OK.
 };
 const port=3001
-const dbUri=dotnev.parsed.DB_URI;
+const dbUri = process.env.DB_URI;
 //Middlewares
 app.use(cors(corsOptions))
 app.use(express.json());
