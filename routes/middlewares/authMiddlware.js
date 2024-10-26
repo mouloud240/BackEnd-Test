@@ -6,7 +6,7 @@ function authinticate(req,res,next){
   if (!token){
     return res.status(401).send('Provide a token');
   }
-  Jwt.verify(token,dotnev.parsed.ACCESS_SECRET,(err,user)=>{
+  Jwt.verify(token,process.env.ACCESS_SECRET,(err,user)=>{
     if (err){
       return res.status(403).send('Token is not valid');
     }

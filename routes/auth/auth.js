@@ -37,7 +37,7 @@ AuthRouter.post('/refresh',async (req,res)=>{
     res.status(400).send('Provide a refresh token');
     return;
   }
-  Jwt.verify(refreshToken,dotnev.parsed.REFRESH_SECRET,(err,user)=>{
+  Jwt.verify(refreshToken,process.env.REFRESH_SECRET,(err,user)=>{
     if (err){
       res.status(403).send('Invalid refresh token');
       return;
